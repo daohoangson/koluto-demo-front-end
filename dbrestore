@@ -1,0 +1,2 @@
+mysql -u mysql -p koluto_frontend < db.sql
+
