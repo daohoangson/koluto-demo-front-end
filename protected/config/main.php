@@ -1,5 +1,7 @@
 <?php
 
+require_once(dirname(__FILE__) . '/../Constants.php');
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -7,10 +9,13 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Koluto News',
 
-	// preloading 'log' component
-	'preload'=>array('log'),
+	// preloading components
+	'preload'=>array(
+		'log',
+		'cache',
+	),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -34,32 +39,22 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		// uncomment the following to enable URLs in path-format
-		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
+				'' => 'home/index',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
 		'db'=>array(
 			'connectionString' => 'mysql:host=127.0.0.1;dbname=koluto_frontend',
-			'username' => 'mysql',
-			'password' => '123456'
-		),
-		// uncomment the following to use a MySQL database
-		/*
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'mysql',
+			'password' => '123456',
 			'charset' => 'utf8',
 		),
-		*/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
             'errorAction'=>'site/error',
@@ -77,6 +72,12 @@ return array(
 					'class'=>'CWebLogRoute',
 				),
 				*/
+			),
+		),
+		'cache' => array(
+			'class' => 'CMemCache',
+			'servers' => array(
+				array('host' => '127.0.0.1', 'port' => 11211, 'weight' => 100),
 			),
 		),
 	),
