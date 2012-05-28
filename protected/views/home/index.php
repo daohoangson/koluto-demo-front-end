@@ -5,6 +5,7 @@
 		<?php foreach ($feature as $article): ?>
 			<?php $this->widget('application.widgets.ImageFromHtml', array(
 				'html' => $article->article_html,
+				'url' => $article->article_source,
 				'width' => 300,
 			)); ?>
 			<?php break; ?>
@@ -33,6 +34,7 @@
 								<h3><a href="<?php echo $article->article_source; ?>"><?php echo mb_substr(trim($article->article_text), 0, 30, 'utf-8'); ?>...</a></h3>
 								<?php $this->widget('application.widgets.ImageFromHtml', array(
 									'html' => $article->article_html,
+									'url' => $article->article_source,
 									'width' => 200,
 								)); ?>
 								<p><?php echo mb_substr(trim($article->article_text), 30, 100, 'utf-8'); ?>...</p>

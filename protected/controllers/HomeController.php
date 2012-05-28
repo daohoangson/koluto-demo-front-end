@@ -66,6 +66,12 @@ class HomeController extends Controller
 	
 	protected function _checkForUpdate()
 	{
+		if (isset($_GET['update']) AND $_GET['update'] == 0)
+		{
+			// no update!
+			return;
+		}
+		
 		/* @var $cache CMemCache */
 		$cache = Yii::app()->cache;
 		
