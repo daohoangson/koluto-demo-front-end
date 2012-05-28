@@ -17,7 +17,8 @@ class WordController extends Controller
 		
 		$trendingWords = $cache->get(sprintf(Constants::CACHE_SECTION_WORDS_X, $section));
 		
-		$articles = $this->_getArticlesWithWords(array($word), array($ymdFromUpdatedTimestamp));
+		// $articles = $this->_getArticlesWithWords(array($word), array($ymdFromUpdatedTimestamp));
+		$articles = $this->_getArticlesWithWords(array($word));
 		
 		$wordsDataRaw = array(
 			$word => $kolutoApi->getWord($word),

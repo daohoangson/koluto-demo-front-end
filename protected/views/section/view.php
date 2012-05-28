@@ -5,9 +5,17 @@
 <h1><?php echo Constants::$SECTION_NAMES[$section]; ?></h1>
 <div>
 	<div style="width: 600px; float: left">
-		<div id="graph" style="width: 600px; height: 400px"></div>
+		<?php $this->widget('application.widgets.Graph', array(
+			'wordsData' => $wordsData,
+			'ymdSections' => $ymdSections,
+			'width' => 600,
+			'height' => 400,
+		)); ?>
 		<div>
-			Trending: <?php echo implode(', ', $trendingWords); ?>
+			Trending:
+			<?php foreach ($trendingWords as $word): ?>
+				<?php echo CHtml::link($word, array('word/view', 'word' => $word)); ?>
+			<?php endforeach; ?>
 		</div>
 	</div>
 	<div style="margin-left: 610px;">
@@ -19,65 +27,4 @@
 		<?php endforeach; ?>
 	</div>
 </div>
-
-<script type="text/javascript">
-(function basic_timeline(container)
-{
-	var
-		wordsData = <?php echo json_encode($wordsData); ?>,
-		ymdSections = <?php echo json_encode($ymdSections); ?>,
-		d = [],
-		i, j, graph;
-
-	var xLabels = [];
-	for (j = 0; j < ymdSections.length; j++)
-	{
-		xLabels.push(ymdSections[j]);
-	}
-
-	for (var word in wordsData)
-	{
-		wordD = {
-			data: [],
-			label: word
-		};
-
-		for (j = 0; j < ymdSections.length; j++)
-		{
-			var value = 0;
-			
-			if (wordsData[word][ymdSections[j]])
-			{
-				// data for this section exists
-				value = wordsData[word][ymdSections[j]]
-			}
-			else
-			{
-				// no data
-			}
-
-			wordD.data.push([j, value]);
-		}
-		
-		d.push(wordD);
-	}
-console.log(d);
-	// Draw Graph
-	graph = Flotr.draw(container, d, {
-		xaxis: {
-			noTicks: 3,
-			tickFormatter: function (x)
-			{
-				var x = parseInt(x);
-				return xLabels[x % xLabels.length];
-			}
-		}, 
-		yaxis: {
-			showLabels : false
-		},
-		grid: {
-			horizontalLines : false
-		}
-	});
-})(document.getElementById("graph"));
 </script>
