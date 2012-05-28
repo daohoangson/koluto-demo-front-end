@@ -21,6 +21,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.widgets.*',
 	),
 
 	'modules'=>array(
@@ -79,6 +80,9 @@ return array(
 			'servers' => array(
 				array('host' => '127.0.0.1', 'port' => 11211, 'weight' => 100),
 			),
+		),
+		'koluto' => array(
+			'class' => 'Koluto',
 		),
 	),
 

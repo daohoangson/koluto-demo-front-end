@@ -149,3 +149,67 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/index.php
 ---
+2012/05/28 00:08:14 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.koluto" is not defined.' in /Users/sondh/Working/KLTN/Phase2-Front-end/framework/base/CComponent.php:131
+Stack trace:
+#0 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/base/CModule.php(106): CComponent->__get('koluto')
+#1 /Users/sondh/Working/KLTN/Phase2-Front-end/protected/controllers/HomeController.php(20): CModule->__get('koluto')
+#2 /Users/sondh/Working/KLTN/Phase2-Front-end/protected/controllers/HomeController.php(7): HomeController->_checkForUpdate()
+#3 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/actions/CInlineAction.php(50): HomeController->actionIndex()
+#4 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#6 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php(276): CController->run('index')
+#8 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php(135): CWebApplication->runController('home/index')
+#9 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Users/sondh/Working/KLTN/Phase2-Front-end/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php
+---
+2012/05/28 06:42:16 [error] [exception.CException] exception 'CException' with message 'Property "ImageFromHtml.html" is not defined.' in /Users/sondh/Working/KLTN/Phase2-Front-end/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWidgetFactory.php(162): CComponent->__set('html', 'oh yeah')
+#1 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(HomeController), 'application.wid...', Array)
+#2 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CBaseController.php(173): CBaseController->createWidget('application.wid...', Array)
+#3 /Users/sondh/Working/KLTN/Phase2-Front-end/protected/views/home/index.php(8): CBaseController->widget('application.wid...', Array)
+#4 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CBaseController.php(127): require('/Users/sondh/Wo...')
+#5 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Users/sondh/Wo...', Array, true)
+#6 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(870): CBaseController->renderFile('/Users/sondh/Wo...', Array, true)
+#7 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#8 /Users/sondh/Working/KLTN/Phase2-Front-end/protected/controllers/HomeController.php(43): CController->render('index', Array)
+#9 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/actions/CInlineAction.php(50): HomeController->actionIndex()
+#10 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php(276): CController->run('index')
+#14 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php(135): CWebApplication->runController('home/index')
+#15 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Users/sondh/Working/KLTN/Phase2-Front-end/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php/
+---
+2012/05/28 06:42:50 [error] [php] Object of class ImageFromHtml could not be converted to string (/Users/sondh/Working/KLTN/Phase2-Front-end/protected/views/home/index.php:7)
+Stack trace:
+#0 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(870): HomeController->renderFile()
+#1 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(783): HomeController->renderPartial()
+#2 /Users/sondh/Working/KLTN/Phase2-Front-end/protected/controllers/HomeController.php(43): HomeController->render()
+#3 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/actions/CInlineAction.php(50): HomeController->actionIndex()
+#4 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(287): HomeController->runAction()
+#6 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CController.php(266): HomeController->runActionWithFilters()
+#7 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php(276): HomeController->run()
+#8 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#9 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Users/sondh/Working/KLTN/Phase2-Front-end/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/
+in /Users/sondh/Working/KLTN/Phase2-Front-end/protected/views/home/index.php (7)
+in /Users/sondh/Working/KLTN/Phase2-Front-end/protected/controllers/HomeController.php (43)
+in /Users/sondh/Working/KLTN/Phase2-Front-end/index.php (13)
+2012/05/28 07:06:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "section/view".' in /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/web/CWebApplication.php(135): CWebApplication->runController('section/view')
+#1 /Users/sondh/Working/KLTN/Phase2-Front-end/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/sondh/Working/KLTN/Phase2-Front-end/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/section/view?section=culture
+HTTP_REFERER=http://news.koluto.com/index.php/
+---
