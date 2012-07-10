@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `tbl_article`
+--
+
+DROP TABLE IF EXISTS `tbl_article`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_article` (
+  `article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `article_source` varchar(255) NOT NULL DEFAULT '',
+  `article_html` mediumtext NOT NULL,
+  `article_text` mediumtext NOT NULL,
+  `date_timestamp` int(10) unsigned NOT NULL,
+  `date_string` varchar(8) NOT NULL DEFAULT '',
+  `section_string` varchar(50) NOT NULL DEFAULT '',
+  `koluto_id` varchar(255) DEFAULT '',
+  `article_title` varchar(255) NOT NULL DEFAULT '',
+  `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`article_id`),
+  UNIQUE KEY `koluto_id` (`koluto_id`),
+  KEY `section_string` (`section_string`,`date_string`),
+  KEY `article_source` (`article_source`)
+) ENGINE=InnoDB AUTO_INCREMENT=28734 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `tbl_user`
 --
 
@@ -30,15 +55,6 @@ CREATE TABLE `tbl_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_user`
---
-
-LOCK TABLES `tbl_user` WRITE;
-/*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -49,4 +65,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-05-26 15:20:43
+-- Dump completed on 2012-07-10  8:00:32

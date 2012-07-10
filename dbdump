@@ -1,3 +1,3 @@
-ECHO 'Enter password, you will need it twice (1 for clean up, 1 for dump)'
-mysql -u mysql -p koluto_frontend < dbcleanup.sql
-mysqldump --skip-extended-insert -u mysql -p koluto_frontend > db.sql
+# ECHO 'Enter password, you will need it twice (1 for clean up, 1 for dump)'
+# mysql -u mysql -p koluto_frontend < dbcleanup.sql
+mysqldump -d -u mysql -p koluto_frontend > db.sql

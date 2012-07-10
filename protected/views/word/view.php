@@ -15,8 +15,8 @@
 	<div style="margin-left: 610px;">
 		<?php foreach ($articles as $article): ?>
 			<div>
-				<h3><a href="<?php echo $article->article_source; ?>"><?php echo mb_substr(trim($article->article_text), 0, 30, 'utf-8'); ?>...</a></h3>
-				<p><?php echo mb_substr(trim($article->article_text), 30, 100, 'utf-8'); ?>...</p>
+				<h3><a href="<?php echo $article->article_source; ?>"><?php echo mb_substr(trim($article->article_title), 0, 30, 'utf-8'); ?>...</a></h3>
+				<p><?php echo mb_substr(trim($article->article_text), 0, 100, 'utf-8'); ?>...</p>
 			</div>
 		<?php endforeach; ?>
 	</div>

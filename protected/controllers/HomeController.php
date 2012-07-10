@@ -102,7 +102,8 @@ class HomeController extends Controller
 			// get section words
 			foreach (Constants::$SECTIONS as $section)
 			{
-				$sectionWords[$section] = $kolutoApi->getSectionWords($section);
+				// $sectionWords[$section] = $kolutoApi->getSectionWords($section);
+				$sectionWords[$section] = array();
 			}
 			$sectionWords[Constants::SECTION_ALL] = array();
 			
